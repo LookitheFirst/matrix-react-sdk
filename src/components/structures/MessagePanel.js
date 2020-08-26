@@ -531,7 +531,7 @@ export default class MessagePanel extends React.Component {
             ret.push(...grouper.getTiles());
         }
 
-        return ret;
+        return ret.filter(it => !it.key.startsWith("m")); // Temporary workaround to duplicate guest messages
     }
 
     _getTilesForEvent(prevEvent, mxEv, last) {
